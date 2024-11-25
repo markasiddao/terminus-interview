@@ -35,3 +35,4 @@ Things you may want to cover:
 - put rails 7.0 on gemfile 
 - updated gem 'listen', '>= 3.5' in Gemfile, updated depencies
 - rails server
+- rails db:create and rails db:seed
