@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "admin/show"
   resources :certs
   resources :properties
   root "certs#new"

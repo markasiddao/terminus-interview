@@ -1,0 +1,20 @@
+<h1>Admin#show</h1>
+<p>Find me in app/views/admin/show.html.erb</p>
+
+<table>
+    <th>Property Table</th>
+    <% @properties.each do |property| %>
+            <tr>
+                <td><%= link_to property.name, property %></td>
+                <td><%= property.display_name %></td>
+                <td><%= property.address %></td>
+                <td><%= property.market_value %></td>
+                <td><%= property.owner_address %></td>
+                <td><%= property.state_id %></td>
+                <td><%= property.lat %></td>
+                <td><%= property.lng %></td>
+                <td><%= property.construction_type %></td>
+                <td><%= property.city %></td>
+            <tr>
+    <% end %>
+</table>

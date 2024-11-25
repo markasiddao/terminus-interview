@@ -2,3 +2,15 @@
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>
+
+<ul>
+    <li>Display Name: <%= @property.display_name %></li>
+    <li>Address: <%= @property.address %></li>
+    <li>Market Value: <%= @property.market_value %></li>
+    <li>Owner Address: <%= @property.owner_address %></li>
+    <li>State ID: <%= @property.state_id %></li>
+    <li>Latitude: <%= @property.lat %></li>
+    <li>Longitude: <%= @property.lng %></li>
+    <li>Construction Type: <%= @property.construction_type %></li>
+    <li>City: <%= @property.city %></li>
+</ul>
