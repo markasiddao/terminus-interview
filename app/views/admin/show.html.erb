@@ -1,20 +1,52 @@
-<h1>Admin#show</h1>
-<p>Find me in app/views/admin/show.html.erb</p>
-
-<table>
-    <th>Property Table</th>
-    <% @properties.each do |property| %>
-            <tr>
-                <td><%= link_to property.name, property %></td>
-                <td><%= property.display_name %></td>
-                <td><%= property.address %></td>
-                <td><%= property.market_value %></td>
-                <td><%= property.owner_address %></td>
-                <td><%= property.state_id %></td>
-                <td><%= property.lat %></td>
-                <td><%= property.lng %></td>
-                <td><%= property.construction_type %></td>
-                <td><%= property.city %></td>
-            <tr>
-    <% end %>
-</table>
+<body class="mx-auto">
+    <div class="relative overflow-x-auto px-4 px-3">
+        <table class="w-full text-xs text-left rtl:text-right table-auto border border-gray-300">
+            <thead class="text-sm bg-terminus-blue text-white border-solid border-2">
+                <tr>
+                    <th scope="col" class="px-3 py-3">
+                        Name
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        Display Name
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        Address
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        Market Value
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        Owner Address
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        State ID
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        Coordinates
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        Construction Type
+                    </th>
+                    <th scope="col" class="px-3 py-3">
+                        City
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @properties.each do |property| %>
+                    <tr class="text-sm <%= cycle('bg-gray-100', 'bg-white') %> hover:brightness-[90%]">
+                        <td class="px-3 py-4"><%= link_to property.name, property %></td>
+                        <td class="px-3 py-4"><%= property.display_name %></td>
+                        <td class="px-3 py-4 font-medium"><%= property.address %></td>
+                        <td class="px-3 py-4 text-right"><%= number_with_delimiter(property.market_value, :delimiter => ',') %></td>
+                        <td class="px-3 py-4"><%= property.owner_address %></td>
+                        <td class="px-3 py-4"><%= property.state_id %></td>
+                        <td class="px-3 py-4"><%= "#{property.lat}, #{property.lng}" %></td>
+                        <td class="px-3 py-4"><%= property.construction_type %></td>
+                        <td class="px-3 py-4"><%= property.city %></td>
+                    <tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</body>
